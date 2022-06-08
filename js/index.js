@@ -16,20 +16,31 @@ function updateSubtotal(product) {
   let subtotalElement = product.querySelector('.subtotal span')
 
   subtotalElement.innerText = subtotal;
-  return subtotalElement.innerText;
-  
+  return subtotal;
 }
 
 function calculateAll() {
  
-  //return ALGO!//
-  
-  //const singleProduct = document.querySelector('.product');
-  //updateSubtotal(singleProduct);
-  // end of test
+/*const productsElements = document.querySelectorAll('.product'); // Esto hace referencia a la fila entera
+let subtotal = updateSubtotal(productsElements[0]); // Llamamos a la función y le damos el valr de un solo elemento
+let totalElement = document.querySelector('#total-value span');
+totalElement.innerText = subtotal; // Escribimos dentro de la cajita para que el total sea igual al subtotal
+*/
 
-  // ITERATION 2
-  //... your code goes here
+let sumatorio = 0;
+const allItems = document.querySelectorAll('.product');
+
+allItems.forEach((item) => {
+  let subtotal = updateSubtotal(item);
+  sumatorio += subtotal;
+});
+
+}
+
+
+
+  
+
 
   // ITERATION 3
   //... your code goes here
